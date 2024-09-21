@@ -1,0 +1,28 @@
+{{ define "content" }}
+<div class="card mb-4">
+    <div class="card-body">
+        <table class="table mb-0">
+            <thead class="thead-light">
+                <tr>
+                    <th>Nama File</th>
+                    <th>Size</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .users }}
+                <tr>
+                    <td>
+                        <a href="http://localhost:6060/images/anatomi/{{ .FileName }}" class="ref" target="_blank">{{ .FileName }}</a>
+                    </td>
+                    <td>{{ .FileSize }}</td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Download</button>
+                    </td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </div>
+</div>
+{{ end }}
